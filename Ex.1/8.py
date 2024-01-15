@@ -2,6 +2,9 @@
 #Play until either you or the computer gets 3 wins. 
 #Generate random number to get computer’s choice, then check who wins and keep track of victories.
 
+# Author: Junnu Danhammer
+# Description: Above!
+
 import random
 import sys
 

@@ -1,5 +1,7 @@
 #Write a program which repeatedly reads integers until the user enters 0. 
 #Print out the number of negative integers. Use functions in your solution. 
+# Author: Junnu Danhammer
+# Description: Above!
 
 def read_integer():
     number = int(input("Give an number (0 to stop): "))

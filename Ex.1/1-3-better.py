@@ -1,3 +1,6 @@
+# Author: Junnu Danhammer
+# Description: ?
+
 import random
 
 def get_integer_input(prompt):

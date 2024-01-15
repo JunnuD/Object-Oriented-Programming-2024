@@ -9,7 +9,8 @@
 # Then fill the number list with randomly generated numbers and print it out. 
 
 # 3. Arrange numbers in the list from smallest to largest and strings in alphabetical order and print out the lists.
-
+# Author: Junnu Danhammer
+# Description: Above!
 
 import random
 

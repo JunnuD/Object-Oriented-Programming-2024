@@ -8,5 +8,7 @@
 # command (1 search, 2 add, 3 quit): 1name: peter09-22223333
 # command (1 search, 2 add, 3 quit): 3 quitting...
 
+# Author: Junnu Danhammer
+# Description: Above!
 
 print("Hommihi!")

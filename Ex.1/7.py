@@ -2,6 +2,9 @@
 # Count the number of terms that appeared in the AP, the sum of the terms and the sum of the squared terms. 
 # Use functions in your solution.
 
+# Author: Junnu Danhammer
+# Description: Above!
+
 def get_max_value():
     number = int(input("Give maximum value: "))
     return number
