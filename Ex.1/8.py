@@ -41,6 +41,7 @@ def main():
         
         if winner == "Tie":
             print(f"Computers choice is {computer_choice}. It's a tie! ")
+            
         else:
             result_message = "Paper covers Rock." if computer_choice == 'P' else "Rock crushes Scissors." if computer_choice == 'R' else "Scissors cuts Paper."
             print(f"Computer's choice is {computer_choice}. {result_message} Computer {scores['Computer']} You {scores['User']}")
