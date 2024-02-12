@@ -11,17 +11,32 @@ class Coin:
         self.sideup = "Heads"
         
     def toss_the_coin(self):
-        if random.randint(0,4) == 0:
-            self.sideup = "Heads"
-        elif random.randint(0,4) == 1:
-            self.sideup = "Upright!"
-        elif random.randint(0,4) == 2:
-            self.sideup = "Fell off the table and dissapeared"
-        elif random.randint(0,3) == 3:
-            self.sideup = "Defies gravity and flew to an wormhole in outer space"
-        else:
-            self.sideup = "Tails"
-        
+
+        tietokone = random.randint(0,99)
+        upright = 0
+        heads = 0
+        # Lisää tänne loput
+
+
+        for i in range (10000):
+            tietokone = random.randint(0,99)
+            if tietokone < 40:
+                self.sideup = "Heads"
+                heads += 1
+            elif tietokone < 80:
+                self.sideup = "Tails!"
+            elif tietokone < 90:
+                self.sideup = "Fell off the table and dissapeared"
+            elif tietokone < 98:
+                self.sideup = "Upright"
+                upright += 1
+            else:
+                self.sideup = "Defies gravity and flew to an wormhole in outer space"
+        # Sisälle laskuri jokaiselle arvolle.
+            
+        print(upright)
+        print(heads)
+
     def get_sideup(self):
         return self.sideup
 

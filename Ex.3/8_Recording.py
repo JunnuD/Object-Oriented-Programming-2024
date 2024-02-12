@@ -6,7 +6,7 @@ class Recording:
         return self.__length
     
     def set_length(self, new_length):
-        self.__lenth = new_length
+        self.__length = new_length
 
 
 
