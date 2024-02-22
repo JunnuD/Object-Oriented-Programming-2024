@@ -112,6 +112,7 @@ class CargoHold:
     
     def add_suitcase(self, suitcase: Suitcase):
         if suitcase.weight() <= self.__max_weight - self.get_current_weight():
+            # Corrected NOT: directly use suitcase instead of creating a new Suitcase object
             self.__suitcases.append(suitcase)
 
     def get_current_weight(self):
@@ -127,6 +128,7 @@ class CargoHold:
         num_suitcases = len(self.__suitcases)
         available_space = self.__max_weight - self.get_current_weight()
         return f"{num_suitcases} suitcase{'s' if num_suitcases != 1 else ''}, space for {available_space} kg"
+
 
 # Testing CargoHold... Part 6
 book = Item("ABC Book", 200)
@@ -169,3 +171,4 @@ cargo_hold.add_suitcase(peters_suitcase)
 
 print("The suitcases in the cargo hold contain the following items:")
 cargo_hold.print_items()
+print("The end. But above there is nothing... Why????")
