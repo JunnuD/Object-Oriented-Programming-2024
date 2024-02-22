@@ -13,3 +13,46 @@ class MagicPotion:
             print(f"{ingredient[0]} {ingredient[1]} grams")
 
 
+class SecretMagicPotion(MagicPotion):
+    def __init__(self, name: str, password: str):
+        super().__init__(name)
+        self.password = password
+    
+    def validate_password(self, entered_password: str):
+        if entered_password != self.password:
+            raise ValueError("Wrong password!")
+    
+    def add_ingredient(self, ingredient: str, amount: float, password: str):
+        self.validate_password(password)
+        super().add_ingredient(ingredient, amount)
+
+    def print_recipe(self, password: str):
+        self.validate_password(password)
+        super().print_recipe()
+
+
+# Testing...
+diminuendo = SecretMagicPotion("Diminuendo maximus", "hocuspocus")
+diminuendo.add_ingredient("Toadstool", 1.5, "hocuspocus")
+diminuendo.add_ingredient("Magic sand", 3.0, "hocuspocus")
+diminuendo.add_ingredient("Frogspawn", 4.0, "hocuspocus")
+diminuendo.print_recipe("hocuspocus")
+
+try:
+    diminuendo.print_recipe("pocushocus")  # This should raise a ValueError
+except ValueError as e:
+    print(e)
+
+print('')
+kuikkelusmaximus = SecretMagicPotion("kuikkelusmaximus", "Kuutamo")
+kuikkelusmaximus.add_ingredient("Karhunvarvas", 4, "Kuutamo")
+kuikkelusmaximus.add_ingredient("Frisbeekiekko", 1, "Kuutamo")
+kuikkelusmaximus.print_recipe("Kuutamo")
+
+print('')
+try:
+    kuikkelusmaximus.print_recipe("Kuikka")  # This should raise a ValueError
+except ValueError as e:
+    print(e)
+
+print("Good job mate!")
