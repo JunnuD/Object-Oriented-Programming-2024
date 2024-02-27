@@ -18,7 +18,7 @@ print("Old Fashioned way")
 new_list = []
 for word in strings:
     for c in word:
-        if c in "aeiou":
+        if c in "aeiou  ":
             find = True
     if find:
         new_list.append(word)
