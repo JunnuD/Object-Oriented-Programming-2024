@@ -27,7 +27,7 @@ def winner(user,computer):
         dislike_sfx.play()
         print("Computer won. Better Luck Nextime!")
     
-    pygame.time.delay(2000) # This to make sure the program doens't jump straight to the end. Meaning it has time to play sound.
+    pygame.time.delay(3000) # This to make sure the program doens't jump straight to the end. Meaning it has time to play sound.
 
 
 def tilanneTiedotus(user, computer):
