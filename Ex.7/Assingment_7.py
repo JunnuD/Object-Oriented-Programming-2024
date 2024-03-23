@@ -14,7 +14,7 @@ class Mammal:
     def alert(self):
         print("The mammal is alert.")
         event = input("What happens next? (No Threat/Decide to Hunt): ").lower()
-        if event == "mo threat":
+        if event == "no threat":
             self.state = "Resting"
         elif event == "decide to hunt":
             self.state = "Hunting"
@@ -25,7 +25,7 @@ class Mammal:
         if event == "finds food":
             self.state = "Eating"
         elif event == "cannot find food":
-            self.state = "searching for food"
+            self.state = "Searching for Food"
         elif event == "finds prey":
             self.state = "Hunting"
 
@@ -62,15 +62,11 @@ class Mammal:
             else:
                 print("Undefined state. Exiting simulation.")
                 break
-
-            # This is to simulate continuous behavior; in an actual implementation,
-            # we would likely use a more complex event system rather than input.
+            
             continue_simulation = input("Continue simulation? (yes/no): ").lower()
             if continue_simulation != "yes":
                 print("Exiting simulation.")
                 break
 
-
-# Create an instance of Mammal and run the simulation
 mammal = Mammal()
 mammal.run()
