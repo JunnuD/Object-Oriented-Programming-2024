@@ -1,56 +1,58 @@
-import random
-
 class Mammal:
     def __init__(self):
         self.state = "Resting"
 
     def resting(self):
         print("The mammal is resting.")
-        # Randomly decide if the mammal becomes hungry or detects danger
-        if random.choice(["Hungry", "Danger"]) == "Hungry":
+        event = input("Is the mammal hungry? (yes/no): ").lower()
+        if event == "yes":
             self.state = "Hungry"
         else:
-            self.state = "Alert"
+            self.state = "Resting"
 
     def alert(self):
         print("The mammal is alert.")
-        # Randomly decide if the threat passes or the mammal decides to hunt
-        if random.choice(["No Threat", "Decide to Hunt"]) == "No Threat":
+        event = input("Is there no threat? (yes/no): ").lower()
+        if event == "yes":
             self.state = "Resting"
         else:
-            self.state = "Searching for Food"
+            self.state = "Alert"
 
     def hungry(self):
         print("The mammal is hungry and starts searching for food.")
-        self.state = "Searching for Food"
+        event = input("Does the mammal find food? (yes/no): ").lower()
+        if event == "yes":
+            self.state = "Eating"
+        else:
+            self.state = "Searching for Food"
 
     def searching_for_food(self):
         print("The mammal is searching for food.")
-        # Randomly decide if the mammal finds food
-        if random.choice(["Finds Food", "Cannot Find Food"]) == "Finds Food":
+        event = input("Does the mammal find food? (yes/no): ").lower()
+        if event == "yes":
             self.state = "Eating"
         else:
-            print("The mammal could not find food and decides to continue searching.")
+            print("The mammal keeps searching for food.")
             self.state = "Searching for Food"
 
     def hunting(self):
         print("The mammal is hunting.")
-        # Randomly decide if the mammal catches prey
-        if random.choice(["Catches Prey", "Loses Prey"]) == "Catches Prey":
+        event = input("Does the mammal catch the prey? (yes/no): ").lower()
+        if event == "yes":
             self.state = "Eating"
         else:
-            print("The mammal loses the prey or gets tired and goes back to resting.")
+            print("The mammal does not catch the prey and goes back to resting.")
             self.state = "Resting"
 
     def eating(self):
         print("The mammal is eating.")
-        # Randomly decide if the mammal is satiated or disturbed
-        if random.choice(["Satiated", "Disturbed"]) == "Satiated":
+        event = input("Is the mammal satiated? (yes/no): ").lower()
+        if event == "yes":
             print("The mammal is now satiated and goes to rest.")
             self.state = "Resting"
         else:
-            print("The mammal is disturbed while eating and becomes alert.")
-            self.state = "Alert"
+            print("The mammal is still hungry.")
+            self.state = "Searching for Food"
 
     def run(self):
         # Main loop to simulate mammal's behavior
@@ -70,7 +72,7 @@ class Mammal:
             else:
                 print("Undefined state. Exiting simulation.")
                 break
-            
+
             # Ask user to continue simulation or not
             continue_simulation = input("Continue simulation? (yes/no): ").lower()
             if continue_simulation != "yes":
